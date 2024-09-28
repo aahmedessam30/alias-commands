@@ -23,11 +23,11 @@ notepad $PROFILE
 In the profile, copy the `powershell-alias.txt` content to this profile and reload the powershell profile by typing the following command:
 
 ```powershell
-    . $PROFILE
+. $PROFILE
 ```
 
 After reload the profile verify aliases, for example:
 
 ```powershell
-    pa # should return `php artisan` commands
+pa # should return `php artisan` commands
 ```

@@ -1,0 +1,136 @@
+# General Aliases
+Set-Alias links 'valet links'
+Set-Alias link 'valet link'
+Set-Alias unlink 'valet unlink'
+Set-Alias secure 'valet secure'
+Set-Alias unsecure 'valet unsecure'
+
+# Laravel Aliases
+function cr { composer require $args }
+function pr { composer require wulfheart/pretty_routes }
+
+function pa { php artisan $args }
+function pas { php artisan serve }
+function pavp { php artisan vendor:publish }
+function pakg { php artisan key:generate }
+function pasl { php artisan storage:link }
+
+function list { php artisan route:list }
+function routes { php artisan route:pretty }
+
+function parca { php artisan route:cache }
+function parcl { php artisan route:clear }
+function pavca { php artisan view:cache }
+function pavcl { php artisan view:clear }
+function pacf { php artisan cache:forget $args }
+function pact { php artisan cache:table }
+function cache { php artisan cache:clear }
+function pacca { php artisan config:cache }
+function paccl { php artisan config:clear }
+function optimize { php artisan optimize:clear }
+
+function pam { php artisan migrate $args }
+function pamm { php artisan make:migration $args }
+function pamr { php artisan migrate:reset }
+function pamf { php artisan migrate:fresh }
+function pamfs { php artisan migrate:fresh --seed }
+function pamrf { php artisan migrate:refresh }
+function pamrb { php artisan migrate:rollback }
+
+function pamc { php artisan make:controller $args }
+function pams { php artisan make:seeder $args }
+function pamreq { php artisan make:request $args }
+function pamn { php artisan make:notification $args }
+function pame { php artisan make:exception $args }
+function pamt { php artisan make:test $args }
+function papi { php artisan passport:install }
+
+function job { php artisan make:job $args }
+function seed { php artisan db:seed $args }
+function rule { php artisan make:rule $args }
+function mail { php artisan make:mail $args }
+function model { php artisan make:model $args }
+function scope { php artisan make:scope $args }
+function event { php artisan make:event $args }
+function policy { php artisan make:policy $args }
+function factory { php artisan make:factory $args }
+function storage { php artisan storage:link }
+function pamcmd { php artisan make:command $args }
+function resource { php artisan make:resource $args }
+function listener { php artisan make:listener $args }
+function provider { php artisan make:provider $args }
+function observer { php artisan make:observer $args }
+function livewire { php artisan make:livewire $args }
+function middleware { php artisan make:middleware $args }
+function ziggy { php artisan ziggy:generate }
+
+# Git Alias
+function push { git add *; git commit -m "Commit"; git push origin master }
+Set-Alias gs 'git status'
+
+# NPM Aliases
+Set-Alias npmi 'npm install'
+Set-Alias npmw 'npm run watch'
+Set-Alias npmd 'npm run dev'
+Set-Alias npmp 'npm run prod'
+function npmid { npm install; npm run dev }
+
+# Vue.js Aliases
+Set-Alias npms 'npm run serve'
+Set-Alias npmb 'npm run build'
+Set-Alias npmt 'npm run test:unit'
+Set-Alias npml 'npm run lint'
+Set-Alias serve 'serve -s dist'
+Set-Alias vui 'vue ui'
+
+# Filament Aliases
+function fmu { php artisan make:filament-user $args }
+function fmr { php artisan make:filament-resource $args }
+function fmrm { php artisan make:filament-relation-manager $args }
+function fmw { php artisan make:filament-widget $args }
+function fmp { php artisan make:filament-page $args }
+
+# Translation Extensions
+function pal { php artisan translation:add-language $args }
+function patk { php artisan translation:add-translation-key $args }
+function palt { php artisan translation:list-languages }
+function palmt { php artisan translation:list-missing-translation-keys }
+function past { php artisan translation:sync-translations }
+function pasmt { php artisan translation:sync-missing-translation-keys }
+
+# Laravel Modules
+function mdm { php artisan module:make $args }
+function mdmm { php artisan module:make-model $args }
+function mdmc { php artisan module:make-controller $args }
+function mdmmig { php artisan module:make-migration $args }
+function mdms { php artisan module:make-seed $args }
+function mdmcd { php artisan module:make-command $args }
+function mdmmd { php artisan module:make-middleware $args }
+function mdmma { php artisan module:make-mail $args }
+function mdmev { php artisan module:make-event $args }
+function mdml { php artisan module:make-listener $args }
+function mdmf { php artisan module:make-factory $args }
+function mdmr { php artisan module:make-request $args }
+function mdmn { php artisan module:make-notification $args }
+function mdmex { php artisan module:make-exception $args }
+function mdmt { php artisan module:make-test $args }
+function mdmj { php artisan module:make-job $args }
+function mdmpro { php artisan module:make-provider $args }
+function mdmrp { php artisan module:route-provider }
+function mdmpol { php artisan module:make-policy $args }
+function mdmres { php artisan module:make-resource $args }
+function mduse { php artisan module:use }
+function mdunuse { php artisan module:unuse }
+function mdl { php artisan module:list }
+function mdmig { php artisan module:migrate }
+function mdmigrf { php artisan module:migrate:refresh }
+function mdmigrb { php artisan module:migrate:rollback }
+function mdmigrs { php artisan module:migrate:reset }
+function mdpmig { php artisan module:publish-migration }
+function mdpc { php artisan module:publish-config }
+function mdpt { php artisan module:publish-translation }
+function mde { php artisan module:enable }
+function mdd { php artisan module:disable }
+function mdu { php artisan module:update }
+function mdsm { php artisan module:show-model $args }
+function mds { php artisan module:seed $args }

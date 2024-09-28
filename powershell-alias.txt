@@ -43,6 +43,9 @@ function pamreq { php artisan make:request $args }
 function pamn { php artisan make:notification $args }
 function pame { php artisan make:exception $args }
 function pamt { php artisan make:test $args }
+function pamen { php artisan make:enum $args }
+function pamms { php artisan make:model-scope $args }
+function pamtr { php artisan make:trait $args }
 function papi { php artisan passport:install }
 
 function job { php artisan make:job $args }

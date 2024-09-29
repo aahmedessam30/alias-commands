@@ -31,7 +31,7 @@ function optimize { php artisan optimize:clear }
 
 function pam { php artisan migrate $args }
 function pamm { php artisan make:migration $args }
-function pamr { php artisan migrate:reset }
+function pamrs { php artisan migrate:reset }
 function pamf { php artisan migrate:fresh }
 function pamfs { php artisan migrate:fresh --seed }
 function pamrf { php artisan migrate:refresh }
@@ -39,7 +39,7 @@ function pamrb { php artisan migrate:rollback }
 
 function pamc { php artisan make:controller $args }
 function pams { php artisan make:seeder $args }
-function pamreq { php artisan make:request $args }
+function pamr { php artisan make:request $args }
 function pamn { php artisan make:notification $args }
 function pame { php artisan make:exception $args }
 function pamt { php artisan make:test $args }

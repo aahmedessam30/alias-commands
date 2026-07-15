@@ -1,24 +1,63 @@
+#####################
+# General Utilities
+#####################
 alias cls='clear'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias reload='source ~/.bashrc'
+alias editaliases='notepad ~/.bash_aliases'
+alias myip='curl -s ifconfig.me'
+alias ports='netstat -ano | grep LISTEN'
+alias path='echo -e ${PATH//:/\\n}'
+alias h='history'
+alias grep='grep --color=auto'
+
+#####################
+# Laravel Valet
+#####################
 alias links='valet links'
 alias link='valet link'
 alias unlink='valet unlink'
 alias secure='valet secure'
 alias unsecure='valet unsecure'
+alias vpark='valet park'
+alias vstart='valet start'
+alias vstop='valet stop'
+alias vrestart='valet restart'
 
-# Laravel Alias
-
+#####################
+# Composer
+#####################
 alias cr='composer require'
+alias crd='composer require --dev'
+alias ci='composer install'
+alias cu='composer update'
+alias cda='composer dump-autoload'
 alias pr='composer require wulfheart/pretty_routes'
+alias ct='composer test'
 
+#####################
+# Artisan - General
+#####################
 alias pa='php artisan'
 alias pas='php artisan serve'
 alias pavp='php artisan vendor:publish'
 alias pakg='php artisan key:generate'
 alias pasl='php artisan storage:link'
+alias tinker='php artisan tinker'
 
+#####################
+# Artisan - Routes
+#####################
 alias list='php artisan route:list'
 alias routes='php artisan route:pretty'
 
+#####################
+# Artisan - Cache / Optimize
+#####################
 alias parca='php artisan route:cache'
 alias parcl='php artisan route:clear'
 alias pavca='php artisan view:cache'
@@ -30,17 +69,24 @@ alias pacca='php artisan config:cache'
 alias paccl='php artisan config:clear'
 alias optimize='php artisan optimize:clear'
 
+#####################
+# Artisan - Migrations
+#####################
 alias pam='php artisan migrate'
 alias pamm='php artisan make:migration'
-alias pamr='php artisan migrate:reset'
+alias pamreset='php artisan migrate:reset'
 alias pamf='php artisan migrate:fresh'
 alias pamfs='php artisan migrate:fresh --seed'
 alias pamrf='php artisan migrate:refresh'
 alias pamrb='php artisan migrate:rollback'
+alias pamst='php artisan migrate:status'
 
+#####################
+# Artisan - Make Commands
+#####################
 alias pamc='php artisan make:controller'
 alias pams='php artisan make:seeder'
-alias pamr='php artisan make:request'
+alias pamreq='php artisan make:request'
 alias pamn='php artisan make:notification'
 alias pame='php artisan make:exception'
 alias pamt='php artisan make:test'
@@ -48,6 +94,9 @@ alias pamen='php artisan make:enum'
 alias pamms='php artisan make:model-scope'
 alias pamtr='php artisan make:trait'
 alias papi='php artisan passport:install'
+alias pat='php artisan test'
+alias patf='php artisan test --filter'
+alias patp='php artisan test --parallel'
 
 alias job='php artisan make:job'
 alias seed='php artisan db:seed'
@@ -68,32 +117,65 @@ alias livewire='php artisan make:livewire'
 alias middleware='php artisan make:middleware'
 alias ziggy='php artisan ziggy:generate'
 
-alias push='git add * && git commit -m “Commit” && git push origin master'
-alias gs='git status'
+#####################
+# Laravel Sail
+#####################
+alias sail='./vendor/bin/sail'
+alias sup='sail up -d'
+alias sdown='sail down'
+alias sart='sail artisan'
+alias stink='sail artisan tinker'
+alias scomposer='sail composer'
+alias snpm='sail npm'
 
+#####################
+# Git
+#####################
+alias gs='git status'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push origin'
+alias gpl='git pull origin'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gb='git branch'
+alias gl='git log --oneline --graph --decorate -n 20'
+alias gd='git diff'
+alias gsta='git stash'
+alias gstap='git stash pop'
+alias push='git add . && git commit -m "Commit" && git push origin master'
+
+#####################
+# NPM
+#####################
 alias npmi='npm install'
 alias npmw='npm run watch'
 alias npmd='npm run dev'
 alias npmp='npm run prod'
 alias npmid='npm install && npm run dev'
 
-# Vue Js Alias
+#####################
+# Vue Js
+#####################
 alias npms='npm run serve'
-alias npmb='npm run build' 
-alias npmt='npm run test:unit' 
-alias npml='npm run lint' 
-alias npmd='npm run dev' 
+alias npmb='npm run build'
+alias npmt='npm run test:unit'
+alias npml='npm run lint'
 alias serve='serve -s dist'
 alias vui='vue ui'
 
-# Filament Alias
+#####################
+# Filament
+#####################
 alias fmu='php artisan make:filament-user'
 alias fmr='php artisan make:filament-resource'
 alias fmrm='php artisan make:filament-relation-manager'
 alias fmw='php artisan make:filament-widget'
 alias fmp='php artisan make:filament-page'
 
+#####################
 # Translation Extensions
+#####################
 alias pal='php artisan translation:add-language'
 alias patk='php artisan translation:add-translation-key'
 alias palt='php artisan translation:list-languages'
@@ -101,7 +183,9 @@ alias palmt='php artisan translation:list-missing-translation-keys'
 alias past='php artisan translation:sync-translations'
 alias pasmt='php artisan translation:sync-missing-translation-keys'
 
+#####################
 # Laravel Modules
+#####################
 alias mdm='php artisan module:make'
 alias mdmm='php artisan module:make-model'
 alias mdmc='php artisan module:make-controller'
@@ -137,3 +221,145 @@ alias mdd='php artisan module:disable'
 alias mdu='php artisan module:update'
 alias mdsm='php artisan module:show-model'
 alias mds='php artisan module:seed'
+
+#####################
+# Docker
+#####################
+alias d='docker'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias dimg='docker images'
+alias dex='docker exec -it'
+alias dlogs='docker logs -f'
+alias dstop='docker stop $(docker ps -q)'
+alias drmall='docker rm $(docker ps -aq)'
+alias drmi='docker rmi'
+alias dprune='docker system prune -af'
+alias dvprune='docker volume prune -f'
+alias dbuild='docker build -t'
+alias drun='docker run -it'
+alias dstats='docker stats'
+alias dinspect='docker inspect'
+
+#####################
+# Docker Compose
+#####################
+alias dc='docker compose'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+alias dcb='docker compose up -d --build'
+alias dcl='docker compose logs -f'
+alias dcps='docker compose ps'
+alias dcrestart='docker compose restart'
+alias dcexec='docker compose exec'
+alias dcstop='docker compose stop'
+
+#####################
+# .NET / C#
+#####################
+alias dn='dotnet'
+alias dnr='dotnet run'
+alias dnb='dotnet build'
+alias dnw='dotnet watch run'
+alias dnrestore='dotnet restore'
+alias dntest='dotnet test'
+alias dnclean='dotnet clean'
+alias dnnew='dotnet new'
+alias dnadd='dotnet add package'
+alias dnaddref='dotnet add reference'
+alias dnef='dotnet ef'
+alias dnefmig='dotnet ef migrations add'
+alias dnefupd='dotnet ef database update'
+alias dnefrm='dotnet ef migrations remove'
+alias dnefdrop='dotnet ef database drop'
+alias dnsln='dotnet sln'
+
+#####################
+# NestJS - Nest CLI
+#####################
+alias nest='nest'
+alias nstart='npm run start'
+alias nstartd='npm run start:dev'
+alias nstartp='npm run start:prod'
+alias nstartdb='npm run start:debug'
+alias nbuild='npm run build'
+alias ntest='npm run test'
+alias nteste='npm run test:e2e'
+alias ntestcov='npm run test:cov'
+alias nlint='npm run lint'
+alias nformat='npm run format'
+
+#####################
+# NestJS - Generate (nest g)
+#####################
+alias ngmo='nest g module'
+alias ngco='nest g controller'
+alias ngse='nest g service'
+alias ngre='nest g resolver'
+alias ngga='nest g gateway'
+alias ngpi='nest g pipe'
+alias ngintc='nest g interceptor'
+alias ngguard='nest g guard'
+alias ngfilter='nest g filter'
+alias ngmid='nest g middleware'
+alias ngdec='nest g decorator'
+alias nglib='nest g library'
+alias ngres='nest g resource'
+
+#####################
+# Nx Monorepo
+#####################
+alias nx='nx'
+alias nxs='nx serve'
+alias nxb='nx build'
+alias nxt='nx test'
+alias nxl='nx lint'
+alias nxe2e='nx e2e'
+alias nxg='nx generate'
+alias nxgraph='nx graph'
+alias nxaffected='nx affected'
+alias nxaffb='nx affected --target=build'
+alias nxafft='nx affected --target=test'
+alias nxreset='nx reset'
+alias nxrun='nx run-many'
+
+#####################
+# Prisma
+#####################
+alias pgen='npx prisma generate'
+alias pmig='npx prisma migrate dev'
+alias pmigdeploy='npx prisma migrate deploy'
+alias pstudio='npx prisma studio'
+alias pseed='npx prisma db seed'
+alias ppull='npx prisma db pull'
+alias ppush='npx prisma db push'
+alias preset='npx prisma migrate reset'
+
+#####################
+# TypeORM
+#####################
+alias tomig='npm run typeorm migration:generate'
+alias tomigrun='npm run typeorm migration:run'
+alias tomigrev='npm run typeorm migration:revert'
+alias toschema='npm run typeorm schema:sync'
+
+#####################
+# GraphQL Codegen
+#####################
+alias gqlgen='npm run generate'
+alias gqlcodegen='npx graphql-codegen --config codegen.yml'
+
+#####################
+# Redis / BullMQ
+#####################
+alias redcli='redis-cli'
+alias redping='redis-cli ping'
+alias redflush='redis-cli FLUSHALL'
+alias redmon='redis-cli monitor'
+
+#####################
+# Docker Compose - NestJS, Redis, MySQL
+#####################
+alias dcnest='docker compose up -d nestjs'
+alias dcredis='docker compose up -d redis'
+alias dcdb='docker compose up -d mysql'
